@@ -1,3 +1,13 @@
+This is a fork of [marisa-trie](https://github.com/s-yata/marisa-trie), packaged for Zig.
+Unnecessary files have been deleted, and the build system has been replaced
+with `build.zig`.
+
+> TODO: tests and tools.
+
+Original README follows:
+
+---
+
 ### README
 
 #### Project name
@@ -18,29 +28,29 @@ Matching Algorithm with Recursively Implemented StorAge (MARISA) is a static and
 
 A MARISA-based dictionary supports not only lookup but also reverse lookup, common prefix search and predictive search.
 
-* Lookup is to check whether or not a given string exists in a dictionary.
-* Reverse lookup is to restore a key from its ID.
-* Common prefix search is to find keys from prefixes of a given string.
-* Predictive search is to find keys starting with a given string.
+- Lookup is to check whether or not a given string exists in a dictionary.
+- Reverse lookup is to restore a key from its ID.
+- Common prefix search is to find keys from prefixes of a given string.
+- Predictive search is to find keys starting with a given string.
 
 The biggest advantage of libmarisa is that its dictionary size is considerably more compact than others. See below for the dictionary size of other implementations.
 
-* Input
-  * Source: enwiki-20121101-all-titles-in-ns0.gz
-  * Contents: all page titles of English Wikipedia (Nov. 2012)
-  * Number of keys: 9,805,576
-  * Total size: 200,435,403 bytes (plain) / 54,933,690 bytes (gzipped)
+- Input
+  - Source: enwiki-20121101-all-titles-in-ns0.gz
+  - Contents: all page titles of English Wikipedia (Nov. 2012)
+  - Number of keys: 9,805,576
+  - Total size: 200,435,403 bytes (plain) / 54,933,690 bytes (gzipped)
 
-|Implementation|Size (bytes)|Remarks                    |
-|:-------------|-----------:|--------------------------:|
-|darts-clone   | 376,613,888|Compacted double-array trie|
-|tx-trie       | 127,727,058|LOUDS-based trie           |
-|marisa-trie   |  50,753,560|MARISA trie                |
+| Implementation | Size (bytes) |                     Remarks |
+| :------------- | -----------: | --------------------------: |
+| darts-clone    |  376,613,888 | Compacted double-array trie |
+| tx-trie        |  127,727,058 |            LOUDS-based trie |
+| marisa-trie    |   50,753,560 |                 MARISA trie |
 
 #### Documentation
 
-* README (English): https://www.s-yata.jp/marisa-trie/docs/readme.en.html
-* README (Japanese): https://www.s-yata.jp/marisa-trie/docs/readme.ja.html
+- README (English): https://www.s-yata.jp/marisa-trie/docs/readme.en.html
+- README (Japanese): https://www.s-yata.jp/marisa-trie/docs/readme.ja.html
 
 #### Build instructions
 
@@ -57,5 +67,5 @@ $ make install
 
 #### Source code license
 
-* The BSD 2-clause License
-* The LGPL 2.1 or any later version
+- The BSD 2-clause License
+- The LGPL 2.1 or any later version
