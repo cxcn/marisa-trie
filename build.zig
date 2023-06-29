@@ -41,15 +41,15 @@ pub fn build(b: *std.Build) void {
         "-Weffc++",
         "-Wextra",
         "-Wconversion",
-        "-std=c++17"
+        "-std=c++17",
     });
     lib.linkLibCpp();
 
     // This declares intent for the library to be installed into the standard
     // location when the user invokes the "install" step (the default step when
     // running `zig build`).
-    lib.install();
     lib.installHeadersDirectory("include", "marisa");
+    b.installArtifact(lib);
 
     // Creates a step for unit testing.
     // const main_tests = b.addTest(.{
