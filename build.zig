@@ -24,8 +24,8 @@ pub fn build(b: *std.Build) void {
         .optimize = optimize,
     });
 
-    lib.addIncludePath("include");
-    lib.addIncludePath("lib");
+    lib.addIncludePath(.{ .path = "include" });
+    lib.addIncludePath(.{ .path = "lib" });
     lib.addCSourceFiles(&.{
         "lib/marisa/agent.cc",
         "lib/marisa/keyset.cc",
@@ -48,7 +48,7 @@ pub fn build(b: *std.Build) void {
     // This declares intent for the library to be installed into the standard
     // location when the user invokes the "install" step (the default step when
     // running `zig build`).
-    lib.installHeadersDirectory("include", "marisa");
+    lib.installHeadersDirectory("include", "");
     b.installArtifact(lib);
 
     // Creates a step for unit testing.
